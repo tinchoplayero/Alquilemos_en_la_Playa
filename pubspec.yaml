@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   go_router: ^10.0.0
+  google_fonts: ^5.1.0
 
 dev_dependencies:
   flutter_test:
@@ -20,9 +21,9 @@ flutter:
   uses-material-design: true
   
   assets:
-    - lib/assets/img/
+    - assets/img/
 
   fonts:
     - family: Lobster
       fonts:
-        - asset: lib/assets/fonts/Lobster-Regular.ttf
+        - asset: assets/fonts/Lobster-Regular.ttf
