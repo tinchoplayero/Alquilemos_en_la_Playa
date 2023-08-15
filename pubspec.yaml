@@ -1,4 +1,4 @@
-name: alquilemos_en_la_playa_
+name: alquilemos_en_la_playa
 description: A new Flutter project.
 publish_to: 'none'
 version: 0.1.0
@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  go_router: ^10.0.0
 
 dev_dependencies:
   flutter_test:
@@ -17,3 +18,11 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  
+  assets:
+    - lib/assets/img/
+
+  fonts:
+    - family: Lobster
+      fonts:
+        - asset: lib/assets/fonts/Lobster-Regular.ttf
