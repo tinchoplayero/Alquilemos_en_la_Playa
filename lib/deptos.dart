@@ -16,7 +16,7 @@ class Disponibilidad extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset('lib/assets/img/calendario.JPG'),
+                Image.asset('assets/img/calendario.JPG'),
               ],
             )
           ],
