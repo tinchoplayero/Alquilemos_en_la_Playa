@@ -10,27 +10,34 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return  MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true,
           title: const Text('tinchoplayero'),
         ),
-        body: 
-        Container(
+        body: Container(
+          width: size.width * 0.70,
+          color: Colors.red,
           child: Column(
             children:[
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 
                 children:[
-                   Image.asset('lib/assets/img/clima.png'),
+                   Image.asset(
+                    'lib/assets/img/clima.png',
+                    width: size.width * 0.70,
+                    ),
                 ]
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children:[
-                   Image.asset('lib/assets/img/homepage_logo.png'),
+                   Image.asset(
+                    'lib/assets/img/homepage_logo.png',width: size.width * 0.70,
+                  ),
                 ]
               ),
               Row(
@@ -39,7 +46,7 @@ class MainApp extends StatelessWidget {
                    Text('Gestión de alquileres',
                     style: TextStyle(
                       fontFamily: 'Lobster',
-                      fontSize: 60,
+                      fontSize: size.width * 0.08,
                       color: Colors.green,
                     ),
                    ),
