@@ -1,6 +1,6 @@
 import 'package:alquilemos_en_la_playa/disponibilidad.dart';
 import 'package:flutter/material.dart';
-import 'package:alquilemos_en_la_playa/theme.dart';
+import 'package:alquilemos_en_la_playa/config/theme/theme.dart';
 import 'package:go_router/go_router.dart';
 
 class HomePage extends StatelessWidget {
@@ -34,7 +34,7 @@ class HomePage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children:[
                      Text('Gestión de alquileres',
-                      style: titulosPrincipales,
+                      // style: titulosPrincipales,
                      ),
                   ]
                 ),

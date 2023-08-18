@@ -1,7 +1,7 @@
 import 'package:alquilemos_en_la_playa/calendario.dart';
 import 'package:alquilemos_en_la_playa/home_page.dart';
 import 'package:alquilemos_en_la_playa/main.dart';
-import 'package:alquilemos_en_la_playa/theme.dart';
+import 'package:alquilemos_en_la_playa/config/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:alquilemos_en_la_playa/botonera.dart';
 import 'package:go_router/go_router.dart';
