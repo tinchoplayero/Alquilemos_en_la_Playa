@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:alquilemos_en_la_playa/theme.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -9,56 +10,57 @@ class HomePage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: const Text('tinchoplayero'),
+          title: const Text('Hola, tinchoplayero'),
         ),
         body: Container(
-          width: size.width * 0.70,
-          color: Colors.red,
-          child: Column(
-            children:[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                
-                children:[
-                   Image.asset(
-                    'assets/img/clima.png',
-                    width: size.width * 0.70,
+          
+          child: Padding(
+            padding: EdgeInsets.all(40),
+            child: Column(
+              children:[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children:[
+                     Image.asset(
+                      'assets/img/homepage_logo.png',
+                      width: size.width * 0.70,
                     ),
-                ]
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children:[
-                   Image.asset(
-                    'assets/img/homepage_logo.png',
-                    width: size.width * 0.70,
+                  ]
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children:[
+                     Text('Gestión de alquileres',
+                      style: titulosPrincipales,
+                     ),
+                  ]
+                ),
+                Padding(
+                  padding: EdgeInsets.all(20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children:[
+                       Image.asset(
+                        'assets/img/agenda.png',
+                        width: size.width * 0.70,
+                        ),
+                    ]
                   ),
-                ]
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children:[
-                   Text('Gestión de alquileres',
-                    style: TextStyle(
-                      fontFamily: 'Lobster',
-                      fontSize: size.width * 0.08,
-                      color: Colors.green,
-                    ),
-                   ),
-                ]
-              ),
-            ]
+                ),
+                
+                
+              ]
+            ),
           )
           
         ),
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.blue,
-          selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.lightBlue,
+          
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'Inicio',
+              backgroundColor: temaAlquilemos.primaryColor,
               ),
             BottomNavigationBarItem(
               icon: Icon(Icons.visibility),
