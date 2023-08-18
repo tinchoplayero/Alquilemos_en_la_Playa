@@ -1,7 +1,10 @@
 import 'package:alquilemos_en_la_playa/calendario.dart';
+import 'package:alquilemos_en_la_playa/home_page.dart';
+import 'package:alquilemos_en_la_playa/main.dart';
 import 'package:alquilemos_en_la_playa/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:alquilemos_en_la_playa/botonera.dart';
+import 'package:go_router/go_router.dart';
 
 class Disponibilidad extends StatelessWidget {
   static const name = 'pagina-disponibilidad';
@@ -25,27 +28,35 @@ class Disponibilidad extends StatelessWidget {
           ],
         )
       ),
-      bottomNavigationBar: BottomNavigationBar(
-           items: [
-            BottomNavigationBarItem(
+      bottomNavigationBar: BottomAppBar(
+          color: Colors.purple,
+          child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            IconButton(
               icon: Icon(Icons.home),
-              label: 'Inicio',
-              backgroundColor: temaAlquilemos.primaryColor
+              onPressed: () => context.pushNamed(HomePage.name),
+              //label: 'Inicio',
+              //backgroundColor: temaAlquilemos.primaryColor,
               ),
-            BottomNavigationBarItem(
+            IconButton(
               icon: Icon(Icons.visibility),
-              label: 'Disponibilidad',
+              //label: 'Disponibilidad',
+              onPressed: () => context.pushNamed(Disponibilidad.name)
               ),
-            BottomNavigationBarItem(
+            IconButton(
+              onPressed: () => "",
               icon: Icon(Icons.grid_view),
-              label: 'Ver Deptos',
+              //label: 'Ver Deptos',
               ),
-            BottomNavigationBarItem(
+            IconButton(
+              onPressed: () => "",
               icon: Icon(Icons.person_add),
-              label: 'Agregar',
+              //label: 'Agregar',
               ),  
           ],
           ),
+        ),
     );
   }
 }

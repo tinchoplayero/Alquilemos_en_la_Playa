@@ -1,7 +1,10 @@
+import 'package:alquilemos_en_la_playa/disponibilidad.dart';
 import 'package:flutter/material.dart';
 import 'package:alquilemos_en_la_playa/theme.dart';
+import 'package:go_router/go_router.dart';
 
 class HomePage extends StatelessWidget {
+  static const name = 'pagina-inicio';
   const HomePage({super.key});
 
   @override
@@ -54,28 +57,36 @@ class HomePage extends StatelessWidget {
           )
           
         ),
-        bottomNavigationBar: BottomNavigationBar(
+        bottomNavigationBar: BottomAppBar(
+          color: Colors.purple,
           
-          items: [
-            BottomNavigationBarItem(
+          child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            IconButton(
               icon: Icon(Icons.home),
-              label: 'Inicio',
-              backgroundColor: temaAlquilemos.primaryColor,
+              onPressed: () => "",
+              //label: 'Inicio',
+              //backgroundColor: temaAlquilemos.primaryColor,
               ),
-            BottomNavigationBarItem(
+            IconButton(
               icon: Icon(Icons.visibility),
-              label: 'Disponibilidad',
+              //label: 'Disponibilidad',
+              onPressed: () => context.pushNamed(Disponibilidad.name)
               ),
-            BottomNavigationBarItem(
+            IconButton(
+              onPressed: () => "",
               icon: Icon(Icons.grid_view),
-              label: 'Ver Deptos',
+              //label: 'Ver Deptos',
               ),
-            BottomNavigationBarItem(
+            IconButton(
+              onPressed: () => "",
               icon: Icon(Icons.person_add),
-              label: 'Agregar',
+              //label: 'Agregar',
               ),  
           ],
           ),
+        ),
       );
   }
 }
