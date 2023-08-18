@@ -10,7 +10,7 @@ void main() {
 }
 
 class MainApp extends StatelessWidget {
-  static const name = 'pagina-inicio';
+  
   const MainApp({super.key});
   
 
@@ -23,7 +23,7 @@ class MainApp extends StatelessWidget {
       routeInformationParser: _router.router.routeInformationParser,
       routerDelegate: _router.router.routerDelegate,
       theme: temaAlquilemos,
-      home: HomePage(),
+      //home: HomePage(),
     );
   }
   
