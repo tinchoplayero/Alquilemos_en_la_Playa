@@ -1,5 +1,7 @@
+import 'package:alquilemos_en_la_playa/disponibilidad.dart';
 import 'package:flutter/material.dart';
 import 'package:alquilemos_en_la_playa/theme.dart';
+import 'package:go_router/go_router.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -65,6 +67,7 @@ class HomePage extends StatelessWidget {
             BottomNavigationBarItem(
               icon: Icon(Icons.visibility),
               label: 'Disponibilidad',
+              onPressed: () => context.pushNamed(Disponibilidad.name)
               ),
             BottomNavigationBarItem(
               icon: Icon(Icons.grid_view),
