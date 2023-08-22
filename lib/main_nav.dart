@@ -1,14 +1,13 @@
 import 'theme/theme.dart';
 import 'package:flutter/material.dart';
-import 'widget/widget.dart'; // Importa tus widgets aquí
-
+import 'widget/widgets.dart'; 
 void main() => runApp(MainNavApp());
 
 class MainNavApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      //theme: temaAlquilemos,
+      theme: temaAlquilemos,
       home: MainNav(),
     );
   }
@@ -51,7 +50,7 @@ class _MainNavState extends State<MainNav> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.purple,
+        
         centerTitle: true,
         title: const Text('Hola, tinchoplayero'),
       ),
@@ -61,32 +60,36 @@ class _MainNavState extends State<MainNav> {
           children: _widgetOptions[_selectedIndex],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-            backgroundColor: Colors.purple,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.visibility),
-            label: 'X Depto',
-            backgroundColor: Colors.purple,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.grid_view),
-            label: 'X Fecha',
-            backgroundColor: Colors.purple,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_add),
-            label: '+ Huesped',
-            backgroundColor: Colors.purple,
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.white,
-        onTap: _onItemTapped,
+      bottomNavigationBar: Theme(
+        data: Theme.of(context).copyWith(
+        canvasColor: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
+        primaryColor: Theme.of(context).bottomNavigationBarTheme.selectedItemColor,
+        unselectedWidgetColor: Theme.of(context).bottomNavigationBarTheme.unselectedItemColor,
+        ),
+        child: BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.visibility),
+              label: 'X Depto',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.grid_view),
+              label: 'X Fecha',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person_add),
+              label: '+ Huesped',
+            ),
+          ],
+          currentIndex: _selectedIndex,
+          onTap: _onItemTapped,
+          
+        
+        ),
       ),
     );
   }
