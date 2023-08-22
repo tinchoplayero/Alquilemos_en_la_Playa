@@ -35,7 +35,7 @@ class _DispoTotalState extends State<DispoTotal> {
                 offset: Offset(xOffset, 0.0),
                 child: Image.asset(
                   'assets/img/dispoTotal.png',
-                  height: screenHeight * 0.85, // La altura se adapta a la pantalla
+                  height: screenHeight * 0.8, // La altura se adapta a la pantalla
                   width: imageWidth, // Ancho total de la imagen
                   fit: BoxFit.cover,
                 ),
