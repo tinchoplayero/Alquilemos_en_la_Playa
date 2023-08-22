@@ -1,7 +1,15 @@
 import 'package:alquilemos_en_la_playa/disponibilidad.dart';
+import 'package:alquilemos_en_la_playa/nuevo_huesped.dart';
+import 'package:alquilemos_en_la_playa/vista_general.dart';
+import 'package:alquilemos_en_la_playa/widget/eventos_del_dia.dart';
+import 'package:alquilemos_en_la_playa/widget/menu_inferior.dart';
 import 'package:flutter/material.dart';
-import 'package:alquilemos_en_la_playa/theme.dart';
+import 'package:alquilemos_en_la_playa/theme/theme.dart';
 import 'package:go_router/go_router.dart';
+import 'package:alquilemos_en_la_playa/widget/logo.dart';
+import 'package:alquilemos_en_la_playa/widget/titulo.dart';
+import 'package:alquilemos_en_la_playa/widget/dia_hora_actual.dart';
+
 
 class HomePage extends StatelessWidget {
   static const name = 'pagina-inicio';
@@ -21,72 +29,17 @@ class HomePage extends StatelessWidget {
             padding: EdgeInsets.all(40),
             child: Column(
               children:[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children:[
-                     Image.asset(
-                      'assets/img/homepage_logo.png',
-                      width: size.width * 0.70,
-                    ),
-                  ]
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children:[
-                     Text('Gestión de alquileres',
-                      style: titulosPrincipales,
-                     ),
-                  ]
-                ),
-                Padding(
-                  padding: EdgeInsets.all(20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children:[
-                       Image.asset(
-                        'assets/img/agenda.png',
-                        width: size.width * 0.70,
-                        ),
-                    ]
-                  ),
-                ),
-                
-                
+                Logo(),
+                TituloGestion(),
+                DiaHoraActual(),
+                EventosDelDia(),
+                              
               ]
             ),
           )
           
         ),
-        bottomNavigationBar: BottomAppBar(
-          color: Colors.purple,
-          
-          child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            IconButton(
-              icon: Icon(Icons.home),
-              onPressed: () => "",
-              //label: 'Inicio',
-              //backgroundColor: temaAlquilemos.primaryColor,
-              ),
-            IconButton(
-              icon: Icon(Icons.visibility),
-              //label: 'Disponibilidad',
-              onPressed: () => context.pushNamed(Disponibilidad.name)
-              ),
-            IconButton(
-              onPressed: () => "",
-              icon: Icon(Icons.grid_view),
-              //label: 'Ver Deptos',
-              ),
-            IconButton(
-              onPressed: () => "",
-              icon: Icon(Icons.person_add),
-              //label: 'Agregar',
-              ),  
-          ],
-          ),
-        ),
+        bottomNavigationBar: MenuInferior(),
       );
   }
 }

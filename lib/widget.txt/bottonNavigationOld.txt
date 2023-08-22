@@ -1,0 +1,30 @@
+bottomNavigationBar: BottomAppBar(
+          color: Colors.purple,
+          
+          child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            IconButton(
+              icon: Icon(Icons.home),
+              onPressed: () => "",
+              //label: 'Inicio',
+              //backgroundColor: temaAlquilemos.primaryColor,
+              ),
+            IconButton(
+              icon: Icon(Icons.visibility),
+              //label: 'Disponibilidad',
+              onPressed: () => context.pushNamed(Disponibilidad.name)
+              ),
+            IconButton(
+              onPressed: () => "",
+              icon: Icon(Icons.grid_view),
+              //label: 'Ver Deptos',
+              ),
+            IconButton(
+              onPressed: () => "",
+              icon: Icon(Icons.person_add),
+              //label: 'Agregar',
+              ),  
+          ],
+          ),
+        )

@@ -14,8 +14,9 @@ final TextStyle titulosPrincipales = TextStyle(
   color: Colors.purple,
 );
 
-/*final Color barraInferior = Color(
-  Colors.purple as int
-);*/
-
- final barraInferior = "Colors.purple";
+final TextStyle infoSecundaria = TextStyle(
+    fontSize: 22,  // No puedo implementar estos fontSize: size.width * 0.08,
+    color: Colors.black,
+    fontStyle: FontStyle.italic
+);
+   
