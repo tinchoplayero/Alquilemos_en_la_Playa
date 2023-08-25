@@ -1,5 +1,14 @@
 part of 'disponibilidad_cubit.dart';
 
+enum BotonActivo {
+  BotonDos,
+  BotonCuatro,
+  BotonCinco,
+  BotonSeis,
+  BotonSiete,
+  BotonOcho,
+}
+
 class DisponibilidadState extends Equatable {
   final bool botonDos;
   final bool botonCuatro;
@@ -35,11 +44,13 @@ class DisponibilidadState extends Equatable {
     bool? botonSiete,
     bool? botonOcho,
   }) {
-    return DisponibilidadState(botonDos: botonDos ?? this.botonDos);
-    return DisponibilidadState(botonCuatro: botonCuatro ?? this.botonCuatro);
-    return DisponibilidadState(botonCinco: botonCinco ?? this.botonCinco);
-    return DisponibilidadState(botonSeis: botonSeis ?? this.botonSeis);
-    return DisponibilidadState(botonSiete: botonSiete ?? this.botonSiete);
-    return DisponibilidadState(botonOcho: botonOcho ?? this.botonOcho);
+    return DisponibilidadState(
+      botonDos: botonDos ?? this.botonDos,
+      botonCuatro: botonCuatro ?? this.botonCuatro,
+      botonCinco: botonCinco ?? this.botonCinco,
+      botonSeis: botonSeis ?? this.botonSeis,
+      botonSiete: botonSiete ?? this.botonSiete,
+      botonOcho: botonOcho ?? this.botonOcho,
+    );
   }
 }
