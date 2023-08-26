@@ -1,6 +1,9 @@
-import 'theme/theme.dart';
+import 'package:alquilemos_en_la_playa/disponibilidad/cubit/disponibilidad_cubit.dart';
 import 'package:flutter/material.dart';
-import 'widget/widgets.dart'; 
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../theme/theme.dart';
+import '../../widget/widgets.dart';
+
 // import 'package:flutter_bloc/flutter_bloc.dart';
 void main() => runApp(MainNavApp());
 
@@ -30,8 +33,11 @@ class _MainNavState extends State<MainNav> {
       EventosDelDia(),
     ],
     [
-      Botonera(),
-      Calendario(),
+      BlocProvider(
+        create: (context) => DisponibilidadCubit(),
+        child: Botonera(),
+      ),
+      
     ],
     [
       DispoTotal(),
@@ -51,7 +57,6 @@ class _MainNavState extends State<MainNav> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        
         centerTitle: true,
         title: const Text('Hola, tinchoplayero'),
       ),
@@ -63,9 +68,12 @@ class _MainNavState extends State<MainNav> {
       ),
       bottomNavigationBar: Theme(
         data: Theme.of(context).copyWith(
-        canvasColor: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
-        primaryColor: Theme.of(context).bottomNavigationBarTheme.selectedItemColor,
-        unselectedWidgetColor: Theme.of(context).bottomNavigationBarTheme.unselectedItemColor,
+          canvasColor:
+              Theme.of(context).bottomNavigationBarTheme.backgroundColor,
+          primaryColor:
+              Theme.of(context).bottomNavigationBarTheme.selectedItemColor,
+          unselectedWidgetColor:
+              Theme.of(context).bottomNavigationBarTheme.unselectedItemColor,
         ),
         child: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
@@ -88,8 +96,6 @@ class _MainNavState extends State<MainNav> {
           ],
           currentIndex: _selectedIndex,
           onTap: _onItemTapped,
-          
-        
         ),
       ),
     );

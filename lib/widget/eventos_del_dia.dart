@@ -6,6 +6,8 @@ class EventosDelDia extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    // Recibir Lista de Ingresos
+    // Recibir una Lista de Egresos
     return Padding(
                   padding: EdgeInsets.all(20),
                   child: Column(

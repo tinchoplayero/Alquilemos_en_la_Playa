@@ -1,13 +1,13 @@
 part of 'disponibilidad_cubit.dart';
 
-enum BotonActivo {
+/*enum BotonActivo {
   BotonDos,
   BotonCuatro,
   BotonCinco,
   BotonSeis,
   BotonSiete,
   BotonOcho,
-}
+}*/
 
 class DisponibilidadState extends Equatable {
   final bool botonDos;
@@ -18,7 +18,7 @@ class DisponibilidadState extends Equatable {
   final bool botonOcho;
 
   DisponibilidadState({
-    this.botonDos = false,
+    this.botonDos = true,
     this.botonCuatro = false,
     this.botonCinco = false,
     this.botonSeis = false,

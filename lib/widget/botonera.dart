@@ -1,19 +1,12 @@
 import 'package:alquilemos_en_la_playa/disponibilidad/cubit/disponibilidad_cubit.dart';
+import 'package:alquilemos_en_la_playa/widget/calendario.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../theme/theme.dart';
 
 class Botonera extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    //*****INICIO LINEAS CUBIT */
-    BlocProvider(
-      create: (context) => DisponibilidadCubit(),
-    );
-    final botonCubit = context.watch<DisponibilidadCubit>();
-    final state = botonCubit.state;
-    // final state = context.watch<DisponibilidadCubit>().state;
-    //*****FIN LINEAS  CUBIT */
-
     Size size = MediaQuery.of(context).size;
     return BlocBuilder<DisponibilidadCubit, DisponibilidadState>(
       builder: (context, state) {
@@ -30,12 +23,12 @@ class Botonera extends StatelessWidget {
                     minimumSize: Size(size.width * 0.3, size.height * 0.15),
                     //*****INICIO LINEAS CUBIT */
                     backgroundColor:
-                        state.botonDos ? Colors.purple : Colors.lightGreen,
+                        state.botonDos ? customColor : primaryColor,
                   ),
                   onPressed: () {
                     context
                         .read<DisponibilidadCubit>()
-                        .setBotonActivo(BotonActivo.BotonDos);
+                        .botondoschanged();
                     //*****FIN LINEAS  CUBIT */
 
                     // Acción del botón
@@ -50,9 +43,16 @@ class Botonera extends StatelessWidget {
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    minimumSize: Size(size.width * 0.3, size.height * 0.15),
+                  minimumSize: Size(size.width * 0.3, size.height * 0.15),
+                    //*****INICIO LINEAS CUBIT */
+                    backgroundColor:
+                        state.botonCuatro ? customColor : primaryColor,
                   ),
                   onPressed: () {
+                    context
+                        .read<DisponibilidadCubit>()
+                        .botoncuatrochanged();
+                    //*****FIN LINEAS  CUBIT */
                     // Acción del botón
                   },
                   child: Text(
@@ -66,8 +66,15 @@ class Botonera extends StatelessWidget {
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(size.width * 0.3, size.height * 0.15),
+                  //*****INICIO LINEAS CUBIT */
+                    backgroundColor:
+                        state.botonCinco ? customColor : primaryColor,
                   ),
                   onPressed: () {
+                    context
+                        .read<DisponibilidadCubit>()
+                        .botoncincochanged();
+                    //*****FIN LINEAS  CUBIT */
                     // Acción del botón
                   },
                   child: Text(
@@ -89,8 +96,15 @@ class Botonera extends StatelessWidget {
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(size.width * 0.3, size.height * 0.15),
+                  //*****INICIO LINEAS CUBIT */
+                    backgroundColor:
+                        state.botonSeis ? customColor : primaryColor,
                   ),
                   onPressed: () {
+                    context
+                        .read<DisponibilidadCubit>()
+                        .botonseischanged();
+                    //*****FIN LINEAS  CUBIT */
                     // Acción del botón
                   },
                   child: Text(
@@ -104,8 +118,15 @@ class Botonera extends StatelessWidget {
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(size.width * 0.3, size.height * 0.15),
+                  //*****INICIO LINEAS CUBIT */
+                    backgroundColor:
+                        state.botonSiete ? customColor : primaryColor,
                   ),
                   onPressed: () {
+                    context
+                        .read<DisponibilidadCubit>()
+                        .botonsietechanged();
+                    //*****FIN LINEAS  CUBIT */
                     // Acción del botón
                   },
                   child: Text(
@@ -119,8 +140,15 @@ class Botonera extends StatelessWidget {
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(size.width * 0.3, size.height * 0.15),
+                  //*****INICIO LINEAS CUBIT */
+                    backgroundColor:
+                        state.botonOcho ? customColor : primaryColor,
                   ),
                   onPressed: () {
+                    context
+                        .read<DisponibilidadCubit>()
+                        .botonochochanged();
+                    //*****FIN LINEAS  CUBIT */
                     // Acción del botón
                   },
                   child: Text(
@@ -134,6 +162,7 @@ class Botonera extends StatelessWidget {
               ],
             ),
           ),
+        Calendario()
         ]);
       },
     );

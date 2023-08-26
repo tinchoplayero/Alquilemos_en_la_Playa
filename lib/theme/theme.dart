@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 final Color primaryColor = Color.fromARGB(255, 130, 70, 140);
-final Color customColor = Color.fromARGB(255, 70, 8, 178);
+final Color customColor = Color.fromARGB(255, 44, 7, 50);
 
 final ThemeData temaAlquilemos = ThemeData(
   primaryColor: Color.fromARGB(255, 130, 70, 140),
