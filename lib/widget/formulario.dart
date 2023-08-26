@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:datetime_picker_field_platform/datetime_picker_field_platform.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../disponibilidad/cubit/disponibilidad_cubit.dart';
 
 class FormularioIngreso extends StatelessWidget {
   const FormularioIngreso({super.key});
@@ -10,6 +13,22 @@ class FormularioIngreso extends StatelessWidget {
   }
 }
 
+/*void _showPopupMenu(BuildContext context) async {
+    final deptoElegido = await showMenu(
+      context: context,
+      position: RelativeRect.fill,
+      items: [2, 4, 5, 6, 7, 8].map((numero) {
+        return PopupMenuItem(
+          value: numero,
+          child: Text('$numero'),
+        );
+      }).toList(),
+    );
+    //context.read<DisponibilidadCubit>().cambiarNumero();
+    //context.read<DisponibilidadCubit>().cambiarNumero(deptoElegido);
+    print(deptoElegido);
+  }*/
+
 class FormularioHuesped extends StatefulWidget {
   const FormularioHuesped({super.key});
 
@@ -18,6 +37,32 @@ class FormularioHuesped extends StatefulWidget {
 }
 
 class _FormularioHuespedState extends State<FormularioHuesped> {
+  int? deptoElegido; // Variable para almacenar el departamento seleccionado
+
+  void _showPopupMenu(BuildContext context) async {
+    final seleccionarDepto = await showMenu(
+      context: context,
+      initialValue: 0,
+      position: RelativeRect.fill,
+      items: [2, 4, 5, 6, 7, 8].map((numero) {
+        return PopupMenuItem(
+          value: numero,
+          child: Text('$numero'),
+        );
+      }).toList(),
+    );
+    
+
+    if (seleccionarDepto != null) {
+      setState(() {
+        deptoElegido = seleccionarDepto; // Actualizar el departamento elegido
+      });
+    }
+    context.read<DisponibilidadCubit>().cambiarNumero(deptoElegido.toString());
+    print(deptoElegido);
+
+  }
+
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
@@ -35,26 +80,32 @@ class _FormularioHuespedState extends State<FormularioHuesped> {
               Row(
                 children: [
                   Expanded(
-                    child: Column(
-                      children: [
-                        SizedBox(height: 16.0),
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            minimumSize:
-                                Size(size.width * 0.3, size.height * 0.15),
-                          ),
-                          onPressed: () {
-                            // Acción del botón
-                          },
-                          child: Text(
-                            '2',
-                            style: TextStyle(
-                              fontSize: size.width * 0.2,
-                              color: Colors.white,
+                    child:
+                        BlocBuilder<DisponibilidadCubit, DisponibilidadState>(
+                      builder: (context, state) {
+                        return Column(
+                          children: [
+                            SizedBox(height: 16.0),
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                minimumSize:
+                                    Size(size.width * 0.3, size.height * 0.15),
+                              ),
+                              onPressed: () {
+                                _showPopupMenu(context); // aparece el menu
+                                
+                              },
+                              child: Text(
+                                state.deptoSeleccionado,
+                                style: TextStyle(
+                                  fontSize: size.width * 0.2,
+                                  color: Colors.white,
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
-                      ],
+                          ],
+                        );
+                      },
                     ),
                   ),
                   Expanded(

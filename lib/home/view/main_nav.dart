@@ -37,13 +37,15 @@ class _MainNavState extends State<MainNav> {
         create: (context) => DisponibilidadCubit(),
         child: Botonera(),
       ),
-      
     ],
     [
       DispoTotal(),
     ],
     [
-      FormularioIngreso(),
+      BlocProvider(
+        create: (context) => DisponibilidadCubit(),
+        child: FormularioIngreso(),
+      ),
     ],
   ];
 

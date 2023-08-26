@@ -78,5 +78,12 @@ class DisponibilidadCubit extends Cubit<DisponibilidadState> {
       botonDepto: 8,
     ));
   }
+   
+
+  void cambiarNumero(String deptoElegido) {
+    emit(state.copyWith(
+      deptoSeleccionado: deptoElegido,
+    )); 
+  }
 }
 
