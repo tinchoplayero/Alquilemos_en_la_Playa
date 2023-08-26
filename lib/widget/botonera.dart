@@ -26,12 +26,8 @@ class Botonera extends StatelessWidget {
                         state.botonDos ? customColor : primaryColor,
                   ),
                   onPressed: () {
-                    context
-                        .read<DisponibilidadCubit>()
-                        .botondoschanged();
+                    context.read<DisponibilidadCubit>().botondoschanged();
                     //*****FIN LINEAS  CUBIT */
-
-                    // Acción del botón
                   },
                   child: Text(
                     '2',
@@ -43,17 +39,14 @@ class Botonera extends StatelessWidget {
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                  minimumSize: Size(size.width * 0.3, size.height * 0.15),
+                    minimumSize: Size(size.width * 0.3, size.height * 0.15),
                     //*****INICIO LINEAS CUBIT */
                     backgroundColor:
                         state.botonCuatro ? customColor : primaryColor,
                   ),
                   onPressed: () {
-                    context
-                        .read<DisponibilidadCubit>()
-                        .botoncuatrochanged();
+                    context.read<DisponibilidadCubit>().botoncuatrochanged();
                     //*****FIN LINEAS  CUBIT */
-                    // Acción del botón
                   },
                   child: Text(
                     '4',
@@ -66,16 +59,13 @@ class Botonera extends StatelessWidget {
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(size.width * 0.3, size.height * 0.15),
-                  //*****INICIO LINEAS CUBIT */
+                    //*****INICIO LINEAS CUBIT */
                     backgroundColor:
                         state.botonCinco ? customColor : primaryColor,
                   ),
                   onPressed: () {
-                    context
-                        .read<DisponibilidadCubit>()
-                        .botoncincochanged();
+                    context.read<DisponibilidadCubit>().botoncincochanged();
                     //*****FIN LINEAS  CUBIT */
-                    // Acción del botón
                   },
                   child: Text(
                     '5',
@@ -96,16 +86,13 @@ class Botonera extends StatelessWidget {
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(size.width * 0.3, size.height * 0.15),
-                  //*****INICIO LINEAS CUBIT */
+                    //*****INICIO LINEAS CUBIT */
                     backgroundColor:
                         state.botonSeis ? customColor : primaryColor,
                   ),
                   onPressed: () {
-                    context
-                        .read<DisponibilidadCubit>()
-                        .botonseischanged();
+                    context.read<DisponibilidadCubit>().botonseischanged();
                     //*****FIN LINEAS  CUBIT */
-                    // Acción del botón
                   },
                   child: Text(
                     '6',
@@ -118,16 +105,13 @@ class Botonera extends StatelessWidget {
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(size.width * 0.3, size.height * 0.15),
-                  //*****INICIO LINEAS CUBIT */
+                    //*****INICIO LINEAS CUBIT */
                     backgroundColor:
                         state.botonSiete ? customColor : primaryColor,
                   ),
                   onPressed: () {
-                    context
-                        .read<DisponibilidadCubit>()
-                        .botonsietechanged();
+                    context.read<DisponibilidadCubit>().botonsietechanged();
                     //*****FIN LINEAS  CUBIT */
-                    // Acción del botón
                   },
                   child: Text(
                     '7',
@@ -140,16 +124,13 @@ class Botonera extends StatelessWidget {
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(size.width * 0.3, size.height * 0.15),
-                  //*****INICIO LINEAS CUBIT */
+                    //*****INICIO LINEAS CUBIT */
                     backgroundColor:
                         state.botonOcho ? customColor : primaryColor,
                   ),
                   onPressed: () {
-                    context
-                        .read<DisponibilidadCubit>()
-                        .botonochochanged();
+                    context.read<DisponibilidadCubit>().botonochochanged();
                     //*****FIN LINEAS  CUBIT */
-                    // Acción del botón
                   },
                   child: Text(
                     '8',
@@ -162,7 +143,7 @@ class Botonera extends StatelessWidget {
               ],
             ),
           ),
-        Calendario()
+          Calendario()
         ]);
       },
     );

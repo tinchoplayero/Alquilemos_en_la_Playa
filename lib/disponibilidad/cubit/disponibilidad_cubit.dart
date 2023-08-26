@@ -10,16 +10,7 @@ class DisponibilidadCubit extends Cubit<DisponibilidadState> {
   //DisponibilidadCubit(DisponibilidadState initialState) : super(initialState);
   DisponibilidadCubit() : super(DisponibilidadState());
 
- /* void setBotonActivo(BotonActivo botonActivo) {
-    emit(state.copyWith(
-      botonDos: botonActivo == BotonActivo.BotonDos,
-      botonCuatro: botonActivo == BotonActivo.BotonCuatro,
-      botonCinco: botonActivo == BotonActivo.BotonCinco,
-      botonSeis: botonActivo == BotonActivo.BotonSeis,
-      botonSiete: botonActivo == BotonActivo.BotonSiete,
-      botonOcho: botonActivo == BotonActivo.BotonOcho,
-         ));
-  }*/
+ 
 
   void botondoschanged(){
     emit(state.copyWith(
@@ -29,6 +20,7 @@ class DisponibilidadCubit extends Cubit<DisponibilidadState> {
       botonSeis: false,
       botonSiete: false,
       botonOcho: false,
+      botonDepto: 2,
     ));
   }
   void botoncuatrochanged(){
@@ -39,6 +31,7 @@ class DisponibilidadCubit extends Cubit<DisponibilidadState> {
       botonSeis: false,
       botonSiete: false,
       botonOcho: false,
+      botonDepto: 4,
     ));
   }
   void botoncincochanged(){
@@ -49,6 +42,7 @@ class DisponibilidadCubit extends Cubit<DisponibilidadState> {
       botonSeis: false,
       botonSiete: false,
       botonOcho: false,
+      botonDepto: 5,
     ));
   }
   void botonseischanged(){
@@ -59,6 +53,7 @@ class DisponibilidadCubit extends Cubit<DisponibilidadState> {
       botonSeis: true,
       botonSiete: false,
       botonOcho: false,
+      botonDepto: 6,
     ));
   }
   void botonsietechanged(){
@@ -69,6 +64,7 @@ class DisponibilidadCubit extends Cubit<DisponibilidadState> {
       botonSeis: false,
       botonSiete: true,
       botonOcho: false,
+      botonDepto: 7,
     ));
   }
   void botonochochanged(){
@@ -79,6 +75,7 @@ class DisponibilidadCubit extends Cubit<DisponibilidadState> {
       botonSeis: false,
       botonSiete: false,
       botonOcho: true,
+      botonDepto: 8,
     ));
   }
 }
