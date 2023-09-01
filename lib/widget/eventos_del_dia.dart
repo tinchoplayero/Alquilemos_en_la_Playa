@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:alquilemos_en_la_playa/theme/theme.dart';
+
 
 class EventosDelDia extends StatelessWidget{
 

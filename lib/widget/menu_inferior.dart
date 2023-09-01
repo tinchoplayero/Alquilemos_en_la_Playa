@@ -3,7 +3,6 @@ import 'package:alquilemos_en_la_playa/home_page.dart';
 import 'package:alquilemos_en_la_playa/nuevo_huesped.dart';
 import 'package:alquilemos_en_la_playa/vista_general.dart';
 import 'package:flutter/material.dart';
-import 'package:alquilemos_en_la_playa/theme/theme.dart';
 import 'package:go_router/go_router.dart';
 
 class MenuInferior extends StatelessWidget{
