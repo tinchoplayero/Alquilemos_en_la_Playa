@@ -3,7 +3,7 @@ import 'package:alquilemos_en_la_playa/huesped/huesped.dart';
 class DatabaseService {
   final List<Huesped> _db = huespedesData;
 
-  List<Huesped> getHuespeds() {
+  List<Huesped> getHuespedes() {
     return _db;
   }
 

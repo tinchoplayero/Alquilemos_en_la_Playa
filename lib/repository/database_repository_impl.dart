@@ -11,8 +11,8 @@ class DatabaseRepositoryImpl implements DatabaseRepository {
   }
 
   @override
-  List<Huesped> getHuespeds() {
-    return service.getHuespeds();
+  List<Huesped> getHuespedes() {
+    return service.getHuespedes();
   }
 
   @override

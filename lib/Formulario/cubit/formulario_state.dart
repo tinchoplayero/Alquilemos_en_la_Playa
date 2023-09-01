@@ -15,7 +15,7 @@ class FormularioState extends Equatable {
     this.nombre = const TextoInput.pure(),
     this.apellido = const TextoInput.pure(),
     this.email = const EmailInput.pure()
-  })
+  });
 
   @override
   List<Object> get props => [alias, telefono, nombre, apellido, email, status];
@@ -38,7 +38,7 @@ class FormularioState extends Equatable {
       apellido: apellido ?? this.apellido,
       email: email ?? this.email,
 
-    )
+    );
   
   }
 
