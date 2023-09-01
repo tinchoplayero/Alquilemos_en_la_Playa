@@ -1,4 +1,3 @@
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:formz/formz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,5 +8,8 @@ import '../forms_input/email.dart';
 part 'formulario_state.dart';
 
 class FormularioCubit extends Cubit<FormularioState> {
-  FormularioCubit() : super(FormularioInitial());
+  FormularioCubit() : super(FormularioState());
 }
+
+
+
