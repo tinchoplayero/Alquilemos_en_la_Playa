@@ -1,9 +1,8 @@
-import '../formulario/cubit/formulario_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:datetime_picker_field_platform/datetime_picker_field_platform.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../formulario/modelos/email_input_model.dart';
-import '../formulario/modelos/text_input_model.dart';
+
+import '../disponibilidad/cubit/disponibilidad_cubit.dart';
 
 class FormularioIngreso extends StatelessWidget {
   const FormularioIngreso({super.key});
@@ -59,7 +58,7 @@ class _FormularioHuespedState extends State<FormularioHuesped> {
         deptoElegido = seleccionarDepto; // Actualizar el departamento elegido
       });
     }
-    context.read<FormularioCubit>().cambiarNumero(deptoElegido.toString());
+    context.read<DisponibilidadCubit>().cambiarNumero(deptoElegido.toString());
     print(deptoElegido);
 
   }
@@ -82,7 +81,7 @@ class _FormularioHuespedState extends State<FormularioHuesped> {
                 children: [
                   Expanded(
                     child:
-                        BlocBuilder<FormularioCubit, FormularioState>(
+                        BlocBuilder<DisponibilidadCubit, DisponibilidadState>(
                       builder: (context, state) {
                         return Column(
                           children: [
@@ -160,9 +159,31 @@ class _FormularioHuespedState extends State<FormularioHuesped> {
                 },
               ),
               SizedBox(height: 16.0),
-              CampoTexto(),
+              TextFormField(
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Apellido',
+                ),
+                validator: (String? value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Ingrese un Apellido';
+                  }
+                  return null;
+                },
+              ),
               SizedBox(height: 16.0),
-              EmailField(),
+              TextFormField(
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'e-mail',
+                ),
+                validator: (String? value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Ingrese un e-mail';
+                  }
+                  return null;
+                },
+              ),
 
               ///************** SECTOR  FORMULARIO  DIA Y HORA INGRESOS Y EGRESOS ************************************** */
               SizedBox(height: 16.0),

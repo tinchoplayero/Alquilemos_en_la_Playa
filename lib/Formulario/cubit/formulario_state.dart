@@ -7,6 +7,7 @@ class FormularioState extends Equatable {
   final TextoInput nombre;
   final TextoInput apellido;
   final EmailInput email;
+  final String deptoSeleccionado;
 
   FormularioState({
     this.status = FormzStatus.pure,
@@ -14,11 +15,12 @@ class FormularioState extends Equatable {
     this.telefono = const NumeroInput.pure(),
     this.nombre = const TextoInput.pure(),
     this.apellido = const TextoInput.pure(),
-    this.email = const EmailInput.pure()
+    this.email = const EmailInput.pure(),
+    this.deptoSeleccionado = '0',
   });
 
   @override
-  List<Object> get props => [alias, telefono, nombre, apellido, email, status];
+  List<Object> get props => [alias, telefono, nombre, apellido, email, status,deptoSeleccionado];
 
   FormularioState copyWith({
     FormzStatus? status,
@@ -27,7 +29,7 @@ class FormularioState extends Equatable {
     TextoInput? nombre,
     TextoInput? apellido,
     EmailInput? email,
-    
+    String? deptoSeleccionado,
 
   }){
     return FormularioState(
@@ -37,6 +39,7 @@ class FormularioState extends Equatable {
       nombre: nombre ?? this.nombre,
       apellido: apellido ?? this.apellido,
       email: email ?? this.email,
+      deptoSeleccionado: deptoSeleccionado ?? this.deptoSeleccionado,
 
     );
   

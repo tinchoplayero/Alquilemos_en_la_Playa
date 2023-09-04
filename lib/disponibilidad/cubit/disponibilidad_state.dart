@@ -8,7 +8,7 @@ class DisponibilidadState extends Equatable {
   final bool botonSiete;
   final bool botonOcho;
   final int botonDepto;
-  final String deptoSeleccionado;
+  //final String deptoSeleccionado;
 
   DisponibilidadState({
     this.botonDos = true,
@@ -18,7 +18,7 @@ class DisponibilidadState extends Equatable {
     this.botonSiete = false,
     this.botonOcho = false,
     this.botonDepto = 2,
-    this.deptoSeleccionado = '0',
+    //this.deptoSeleccionado = '0',
   });
 
   @override
@@ -30,7 +30,7 @@ class DisponibilidadState extends Equatable {
         botonSiete,
         botonOcho,
         botonDepto,
-        deptoSeleccionado,
+        //deptoSeleccionado,
       ];
 
   DisponibilidadState copyWith({
@@ -41,7 +41,7 @@ class DisponibilidadState extends Equatable {
     bool? botonSiete,
     bool? botonOcho,
     int? botonDepto,
-    String? deptoSeleccionado,
+    //String? deptoSeleccionado,
   }) {
     return DisponibilidadState(
       botonDos: botonDos ?? this.botonDos,
@@ -51,7 +51,7 @@ class DisponibilidadState extends Equatable {
       botonSiete: botonSiete ?? this.botonSiete,
       botonOcho: botonOcho ?? this.botonOcho,
       botonDepto: botonDepto ?? this.botonDepto,
-      deptoSeleccionado: deptoSeleccionado ?? this.deptoSeleccionado,
+      //deptoSeleccionado: deptoSeleccionado ?? this.deptoSeleccionado,
     );
   }
 }

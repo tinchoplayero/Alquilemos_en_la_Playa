@@ -9,7 +9,33 @@ part 'formulario_state.dart';
 
 class FormularioCubit extends Cubit<FormularioState> {
   FormularioCubit() : super(FormularioState());
+
+  void cambiarNumero(String deptoElegido) {
+    emit(state.copyWith(
+      deptoSeleccionado: deptoElegido,
+    )); 
+  }
+
+  void emailChanged(String value) {
+    final email = EmailInput.dirty(value);
+    emit(state.copyWith(
+      email: email,
+      status: Formz.validate([
+        email,
+        //state.passwordInput,
+      ]),
+    ));
+  }
+
+  void textChanged(String value) {
+    final texto = TextoInput.dirty();
+    emit(state.copyWith(
+      apellido: texto,
+      status: Formz.validate([
+        texto,
+        ]),
+    ));
+  }
+
+  
 }
-
-
-

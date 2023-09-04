@@ -1,4 +1,5 @@
 import 'package:alquilemos_en_la_playa/disponibilidad/cubit/disponibilidad_cubit.dart';
+import 'package:alquilemos_en_la_playa/formulario/cubit/formulario_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../theme/theme.dart';
@@ -44,7 +45,7 @@ class _MainNavState extends State<MainNav> {
     ],
     [
       BlocProvider(
-        create: (context) => DisponibilidadCubit(),
+        create: (context) => FormularioCubit(),
         child: FormularioIngreso(),
       ),
     ],

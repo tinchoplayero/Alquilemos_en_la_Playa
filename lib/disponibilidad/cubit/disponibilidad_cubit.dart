@@ -79,10 +79,10 @@ class DisponibilidadCubit extends Cubit<DisponibilidadState> {
   }
    
 
-  void cambiarNumero(String deptoElegido) {
+  /*void cambiarNumero(String deptoElegido) {
     emit(state.copyWith(
       deptoSeleccionado: deptoElegido,
     )); 
-  }
+  }*/
 }
 
