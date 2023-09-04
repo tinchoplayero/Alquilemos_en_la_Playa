@@ -31,6 +31,7 @@ class _MainNavState extends State<MainNav> {
       TituloGestion(),
       DiaHoraActual(),
       EventosDelDia(),
+      
     ],
     [
       BlocProvider(
