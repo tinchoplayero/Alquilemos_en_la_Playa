@@ -7,7 +7,7 @@ class TituloGestion extends StatelessWidget{
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  //mainAxisAlignment: MainAxisAlignment.center,
                   children:[
                      Text('Gestión de alquileres',
                       style: titulosPrincipales,

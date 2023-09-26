@@ -1,6 +1,7 @@
 
 import 'package:alquilemos_en_la_playa/nuevo_huesped.dart';
-import 'package:alquilemos_en_la_playa/vista_general.dart';import 'package:alquilemos_en_la_playa/disponibilidad.dart';
+import 'package:alquilemos_en_la_playa/vista_general.dart';
+import 'package:alquilemos_en_la_playa/disponibilidad.dart';
 import 'package:alquilemos_en_la_playa/widget/eventos_del_dia.dart';
 import 'package:alquilemos_en_la_playa/widget/menu_inferior.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,7 @@ import 'package:alquilemos_en_la_playa/widget/dia_hora_actual.dart';
 
 
 class HomePage extends StatelessWidget {
-  static const name = 'pagina-inicio';
+  static const name = 'pagina-inicio-old';
   const HomePage({super.key});
 
   @override

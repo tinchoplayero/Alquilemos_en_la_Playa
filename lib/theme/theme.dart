@@ -41,6 +41,12 @@ final TextStyle titulosPrincipales = TextStyle(
   color: Color.fromARGB(255, 130, 70, 140),
 );
 
+final TextStyle titulosSecundario = TextStyle(
+  fontFamily: 'Lobster',
+  fontSize: 20, // No puedo implementar estos fontSize: size.width * 0.08,
+  color: Colors.black,
+);
+
 final TextStyle infoSecundaria = TextStyle(
     fontSize: 22, // No puedo implementar estos fontSize: size.width * 0.08,
     color: Colors.black,

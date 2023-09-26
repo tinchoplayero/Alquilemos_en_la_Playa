@@ -26,4 +26,8 @@ class EmailInput extends FormzInput<String, EmailValidationError> {
         ? null
         : EmailValidationError.invalid;
   }
+
+  
+
+
 }

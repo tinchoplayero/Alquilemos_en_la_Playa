@@ -17,8 +17,10 @@ class DiaHoraActual extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('${diasSemana[now.weekday - 1]} ${now.day} de ${meses[now.month - 1]} de ${now.year} ${now.hour}:${now.minute}',
+          Text('${diasSemana[now.weekday - 1]} ${now.day} de ${meses[now.month - 1]} de ${now.year} ${now.hour}:${now.minute}Hs',
+            softWrap: true,
             style: infoSecundaria,
+            
           )
         ],
       ),

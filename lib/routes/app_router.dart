@@ -1,9 +1,11 @@
 import 'package:alquilemos_en_la_playa/home_page.dart';
+import 'package:alquilemos_en_la_playa/main.dart';
 import 'package:alquilemos_en_la_playa/nuevo_huesped.dart';
 import 'package:alquilemos_en_la_playa/vista_general.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:alquilemos_en_la_playa/disponibilidad.dart';
+import '../home/view/main_nav.dart';
 
 
 class AppRouter {
@@ -17,7 +19,7 @@ class AppRouter {
         GoRoute(
           name: HomePage.name,
           path: "/pagina-inicio",
-          builder: (context, state) => HomePage(),
+          builder: (context, state) => MainNavApp(),
         ),
         GoRoute(
           name: Disponibilidad.name,

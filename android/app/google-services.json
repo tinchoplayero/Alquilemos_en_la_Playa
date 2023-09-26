@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "168406256989",
+    "project_id": "alquilemos-en-la-playa",
+    "storage_bucket": "alquilemos-en-la-playa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:168406256989:android:30867cec63083a273eecb4",
+        "android_client_info": {
+          "package_name": "com.example.alquilemos_en_la_playa_"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDg9aAcVO2fGrD5Rnhhn_HA_TJxeEBgSGU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -7,12 +7,12 @@ class Logo extends StatelessWidget{
     Size size = MediaQuery.of(context).size;
     
     return Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children:[
                      Image.asset(
                       'assets/img/homepage_logo.png',
-                      width: size.width * 0.70,
-                      height: size.height * 0.25,
+                      width: size.width * 0.175,
+                      height: size.height * 0.0625,
                       
                       
                     ),

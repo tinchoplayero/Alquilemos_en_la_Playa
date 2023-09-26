@@ -1,9 +1,12 @@
+import 'package:alquilemos_en_la_playa/formulario/modelos/telefono_input_model.dart';
+
 import '../formulario/cubit/formulario_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:datetime_picker_field_platform/datetime_picker_field_platform.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../formulario/modelos/email_input_model.dart';
-import '../formulario/modelos/text_input_model.dart';
+import '../formulario/modelos/models_formz.dart';
+
+
 
 class FormularioIngreso extends StatelessWidget {
   const FormularioIngreso({super.key});
@@ -113,54 +116,21 @@ class _FormularioHuespedState extends State<FormularioHuesped> {
                     child: Column(
                       children: [
                         SizedBox(height: 16.0),
-                        TextFormField(
-                          decoration: const InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'Alias',
-                          ),
-                          validator: (String? value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Ingrese un Alias';
-                            }
-                            return null;
-                          },
-                        ),
+                        CampoAlias(),
                         SizedBox(height: 16.0),
-                        TextFormField(
-                          decoration: const InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'Telefono',
-                          ),
-                          validator: (String? value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Ingrese un Teléfono';
-                            }
-                            return null;
-                          },
-                        ),
+                        CampoTelefono()
                       ],
                     ),
                   ),
                 ],
               ),
-
+ 
               ///************** SECTOR  FORMULARIO DATOS DE HUESPED************************************** */
 
               SizedBox(height: 16.0),
-              TextFormField(
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Nombre',
-                ),
-                validator: (String? value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Ingrese un Nombre';
-                  }
-                  return null;
-                },
-              ),
+              CampoNombre(),
               SizedBox(height: 16.0),
-              CampoTexto(),
+              CampoApellido(),
               SizedBox(height: 16.0),
               EmailField(),
 

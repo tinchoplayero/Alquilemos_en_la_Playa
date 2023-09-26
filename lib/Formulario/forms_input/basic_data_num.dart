@@ -17,3 +17,5 @@ class NumeroInput extends FormzInput<int, NumeroInputError> {
     return value.isNaN ? NumeroInputError.empty : null;
   }
 }
+
+

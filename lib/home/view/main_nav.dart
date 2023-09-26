@@ -1,14 +1,19 @@
 import 'package:alquilemos_en_la_playa/disponibilidad/cubit/disponibilidad_cubit.dart';
+import 'package:alquilemos_en_la_playa/feature/lista_huespedes/models/cubit/huesped_lista_cubit.dart';
 import 'package:alquilemos_en_la_playa/formulario/cubit/formulario_cubit.dart';
+import 'package:alquilemos_en_la_playa/widget/lista_huespedes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import '../../theme/theme.dart';
 import '../../widget/widgets.dart';
 
 // import 'package:flutter_bloc/flutter_bloc.dart';
-void main() => runApp(MainNavApp());
+//void main() => runApp(MainNavApp());
 
 class MainNavApp extends StatelessWidget {
+  static const name = 'pagina-inicio';
+  const MainNavApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,11 +33,16 @@ class _MainNavState extends State<MainNav> {
 
   List<List<Widget>> _widgetOptions = [
     [
-      Logo(),
-      TituloGestion(),
+      
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children:[
+        Logo(),
+        TituloGestion(),
+      ],
+      ),
       DiaHoraActual(),
       EventosDelDia(),
-      
     ],
     [
       BlocProvider(
@@ -41,7 +51,8 @@ class _MainNavState extends State<MainNav> {
       ),
     ],
     [
-      DispoTotal(),
+      ListaHuespedes(),
+      //DispoTotal(),
     ],
     [
       BlocProvider(
@@ -66,7 +77,7 @@ class _MainNavState extends State<MainNav> {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: _widgetOptions[_selectedIndex],
         ),
       ),
@@ -91,7 +102,7 @@ class _MainNavState extends State<MainNav> {
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.grid_view),
-              label: 'X Fecha',
+              label: 'Ver Huespedes',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person_add),

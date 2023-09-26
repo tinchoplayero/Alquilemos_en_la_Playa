@@ -27,12 +27,42 @@ class FormularioCubit extends Cubit<FormularioState> {
     ));
   }
 
-  void textChanged(String value) {
+  void aliasChanged(String value) {
+    final texto = TextoInput.dirty();
+    emit(state.copyWith(
+      alias: texto,
+      status: Formz.validate([
+        texto,
+        ]),
+    ));
+  }
+
+  void nombreChanged(String value) {
+    final texto = TextoInput.dirty();
+    emit(state.copyWith(
+      nombre: texto,
+      status: Formz.validate([
+        texto,
+        ]),
+    ));
+  }
+ 
+  void apellidoChanged(String value) {
     final texto = TextoInput.dirty();
     emit(state.copyWith(
       apellido: texto,
       status: Formz.validate([
         texto,
+        ]),
+    ));
+  }
+
+  void telefonoChanged(String value) {
+    final numero = NumeroInput.dirty();
+    emit(state.copyWith(
+      telefono: numero,
+      status: Formz.validate([
+        numero,
         ]),
     ));
   }
